@@ -384,6 +384,11 @@ class PluginTest extends \PHPUnit_Framework_TestCase
         $this->versionPassesValidationHelper('1.2.30');
     }
 
+    public function testExactVersionWithPatchDoubleDigitsBetaVersionPassesValidation()
+    {
+        $this->versionPassesValidationHelper('1.2.30-beta3');
+    }
+
     protected function versionFailsValidationHelper($version)
     {
         // Expect an Exception
